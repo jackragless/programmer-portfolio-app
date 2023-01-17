@@ -3,16 +3,19 @@ import os
 import shutil
 import json
 from PIL import Image
+from dotenv import load_dotenv
+
+load_dotenv()
+
+github_auth = load_dotenv(os.getenv("GITHUB_AUTH"))
+
 
 dirpath = "images"
 if os.path.exists(dirpath) and os.path.isdir(dirpath):
     shutil.rmtree(dirpath)
 os.mkdir(dirpath)
 userName = "jackragless"
-headers = {
-    "Authorization": "Bearer "
-    + "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"
-}
+headers = {f"Authorization": "Bearer {github_auth}"}
 
 repos = requests.get(
     f"https://api.github.com/users/{userName}/repos", headers=headers
