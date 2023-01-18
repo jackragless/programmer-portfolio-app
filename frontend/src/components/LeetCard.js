@@ -19,7 +19,6 @@ const LeetCard = () => {
   if (data) {
     console.log(data)
     return (
-      // <></>
       <HStack>
         <CircularProgress value={data.totalSolved} max={data.totalQuestions} />
         <Stack>

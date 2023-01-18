@@ -3,11 +3,9 @@ import {
   CardBody,
   Text,
   Stack,
-  Image,
   Heading,
   LinkBox,
   LinkOverlay,
-  Container,
 } from "@chakra-ui/react"
 import formatGithubText from "../utilities/formatGithubText"
 import ProgressiveImage from "react-progressive-graceful-image"

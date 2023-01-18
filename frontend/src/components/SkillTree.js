@@ -1,6 +1,5 @@
 import * as React from "react"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
-import { Box } from "@chakra-ui/react"
 const SVGComponent = (props) => (
   <TransformWrapper wheel={{ step: "0.05" }}>
     <TransformComponent>

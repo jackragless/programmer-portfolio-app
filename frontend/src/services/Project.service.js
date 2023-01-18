@@ -1,11 +1,8 @@
 import axios from "axios"
-import path from "path"
-import { fileURLToPath } from "url"
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-import dotenv from "dotenv"
-dotenv.config({ path: path.join(__dirname, "../.env") })
-const api_uri = env.API_URI
+import config from "../config.json"
+const api_uri = config.api_uri
+// const api_uri = "http://localhost:5000/api"
+// const api_uri = process.env.API_URI
 
 const getProjects = async (query = "") => {
   const res = await axios.get(`${api_uri}/projects/?title=${query}`)

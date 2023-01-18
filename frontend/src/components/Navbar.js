@@ -1,5 +1,5 @@
 import React from "react"
-import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons"
+import { HamburgerIcon } from "@chakra-ui/icons"
 import getResume from "../services/Resume.service"
 import {
   Button,
