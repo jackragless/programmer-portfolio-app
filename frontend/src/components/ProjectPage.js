@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 import {
   Text,
   Breadcrumb,
-  BreadcrumbLink,
   BreadcrumbItem,
   Badge,
   HStack,
@@ -14,8 +13,6 @@ import {
   Link,
   LinkOverlay,
   VStack,
-  AspectRatio,
-  Divider,
 } from "@chakra-ui/react"
 import { ChevronRightIcon } from "@chakra-ui/icons"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
@@ -35,19 +32,15 @@ const ProjectPage = () => {
       <Container>
         <VStack spacing="5" align="left">
           <VStack spacing="1" align="left">
-            <HStack py='3'>
+            <HStack py="3">
               <Breadcrumb
                 spacing="8px"
                 separator={<ChevronRightIcon color="gray.500" />}
               >
                 <BreadcrumbItem>
-                  <Link href="../projects">
-                    <BreadcrumbLink>Projects</BreadcrumbLink>
-                  </Link>
+                  <Link href="../projects">Projects</Link>
                 </BreadcrumbItem>
-                <a href={projectData.html_url}>
-                  <BreadcrumbItem isCurrentPage></BreadcrumbItem>
-                </a>
+                <BreadcrumbItem></BreadcrumbItem>
               </Breadcrumb>
 
               <LinkBox>
@@ -80,10 +73,11 @@ const ProjectPage = () => {
           <VStack spacing="3">
             {projectData.video ? (
               <iframe
+                title={projectData.name}
                 width="100%"
                 height="250"
                 src="https://www.youtube.com/embed/Gze3XpnaWUA"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -92,9 +86,9 @@ const ProjectPage = () => {
             )}
 
             {projectData.imgs ? (
-              projectData.imgs.map((img) => {
+              projectData.imgs.map((img, i) => {
                 return (
-                  <Box>
+                  <Box key={`imgcontainer-${i}`}>
                     <Image src={img} />
                   </Box>
                 )

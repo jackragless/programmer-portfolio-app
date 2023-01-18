@@ -19,7 +19,7 @@ import {
 import { useEffect, useState } from "react"
 import getResume from "../services/Resume.service"
 import { DownloadIcon } from "@chakra-ui/icons"
-import LeetCard from "./LeetCard"
+// import LeetCard from "./LeetCard"
 import SkillTree from "./SkillTree"
 
 const ResumeItem = ({ data }) => {
@@ -29,7 +29,7 @@ const ResumeItem = ({ data }) => {
         <AccordionButton px="0">
           <Box as="span" flex="1">
             <HStack>
-              <Badge colorScheme="purple">
+              <Badge colorScheme="green">
                 {`${data.startDate} - ${
                   data.endDate ? data.endDate : "PRESENT"
                 }`}
@@ -50,7 +50,7 @@ const ResumeItem = ({ data }) => {
       <>
         <Box>
           <HStack>
-            <Badge colorScheme="purple">
+            <Badge colorScheme="green">
               {`${data.startDate} - ${data.endDate}`}
             </Badge>
             <Box>
@@ -100,25 +100,25 @@ const Resume = () => {
             </HStack>
           </Box>
           <Stack>
-            <Heading>About</Heading>
+            <Heading size="lg">About</Heading>
             <Text>{data.about}</Text>
           </Stack>
           <Stack>
-            <Heading>Skills</Heading>
+            <Heading size="lg">Skills</Heading>
             <SkillTree />
           </Stack>
           <Stack>
-            <Heading>Education</Heading>
+            <Heading size="lg">Education</Heading>
             <Divider></Divider>
-            {data.education.map((eduItem) => {
-              return <ResumeItem data={eduItem} />
+            {data.education.map((eduItem, i) => {
+              return <ResumeItem data={eduItem} key={`edu_${i}`} />
             })}
           </Stack>
           <Stack>
-            <Heading>Work Experience</Heading>
+            <Heading size="lg">Work Experience</Heading>
             <Accordion allowMultiple justifyContent="left">
-              {data.work_experience.map((workItem) => {
-                return <ResumeItem data={workItem} />
+              {data.work_experience.map((workItem, i) => {
+                return <ResumeItem data={workItem} key={`wexp_${i}`} />
               })}
             </Accordion>
             {/* <Heading>LeetCode</Heading>

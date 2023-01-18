@@ -7,7 +7,7 @@ dotenv.config({ path: "../.env" })
 
 const db_uri = process.env.DB_URI
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT
 
 mc.connect(db_uri).then(async (client) => {
   await dbapi.inject(client)

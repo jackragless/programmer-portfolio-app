@@ -1,12 +1,13 @@
 import { extendTheme } from "@chakra-ui/react"
-import { mode } from "@chakra-ui/theme-tools"
 import "@fontsource/covered-by-your-grace"
 import "@fontsource/public-sans"
+
+const accent = "#95DFAE"
 
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#f0e7db", "#202023")(props),
+      bg: "#202023",
     },
   }),
 }
@@ -23,7 +24,6 @@ const components = {
       fontWeight: 900,
     },
     variants: {
- 
       "nav-logo": {
         fontFamily: "Covered By Your Grace",
       },
@@ -31,7 +31,7 @@ const components = {
   },
   Link: {
     baseStyle: (props) => ({
-      color: mode("#3d7aed", "#ff63c3")(props),
+      color: accent,
       textUnderlineOffset: 3,
     }),
   },
@@ -39,6 +39,12 @@ const components = {
     baseStyle: {
       fontFamily: "courier",
     },
+  },
+  BreadcrumbLink: {
+    baseStyle: (props) => ({
+      color: accent,
+      textUnderlineOffset: 3,
+    }),
   },
 }
 
