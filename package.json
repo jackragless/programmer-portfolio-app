@@ -6,5 +6,17 @@
     "api": "cd api && nodemon app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackragless/programmer-portfolio-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackragless/programmer-portfolio-app/issues"
+  },
+  "homepage": "https://github.com/jackragless/programmer-portfolio-app#readme",
+  "description": ""
 }
