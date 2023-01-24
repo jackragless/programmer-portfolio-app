@@ -19,7 +19,7 @@ const App = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 2 }}
       >
         <Navbar />
         {/* w={{ base: "95%", md: "60%", lg: "45%", xl: "30%" }} */}
