@@ -2,6 +2,7 @@
   "name": "root",
   "version": "0.1.0",
   "scripts": {
+    "prod": "cd backend && nodemon start",
     "frontend": "cd frontend && npm start",
     "api": "cd api && nodemon app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
