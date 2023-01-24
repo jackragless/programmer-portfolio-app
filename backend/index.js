@@ -10,7 +10,7 @@ const db_uri =
   "mongodb+srv://jackragless:mernstack@cluster0.she2tlp.mongodb.net/?retryWrites=true&w=majority"
 
 // const port = process.env.PORT
-const port = 3000
+const port = process.env.PORT || 3000
 
 mc.connect(db_uri).then(async (client) => {
   await dbapi.inject(client)
