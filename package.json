@@ -6,7 +6,7 @@
     "frontend": "cd frontend && npm start",
     "api": "cd api && nodemon app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
-    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install"
+    "heroku-postbuild": "npm install -g nodemon && cd frontend && npm install && npm run build && cd ../backend && npm install"
   },
   "main": "index.js",
   "repository": {
