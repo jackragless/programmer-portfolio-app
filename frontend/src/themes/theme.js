@@ -48,9 +48,11 @@ const components = {
   },
 }
 
-// const fonts = {
-//   heading: "",
-// }
+const fonts = {
+  body:`"Public Sans", sans-serif`,
+  heading: `"Covered By Your Grace", "Public Sans"`,
+
+}
 
 const colors = {
   grassTeal: "#88ccca",
@@ -61,5 +63,5 @@ const config = {
   useSystemColorMode: true,
 }
 
-const theme = extendTheme({ config, styles, components, colors })
+const theme = extendTheme({ config, styles, components, fonts, colors })
 export default theme
