@@ -1,11 +1,10 @@
 import { extendTheme } from "@chakra-ui/react"
-import "@fontsource/covered-by-your-grace"
 import "@fontsource/public-sans"
 
 const accent = "#95DFAE"
 
 const styles = {
-  global: (props) => ({
+  global: () => ({
     body: {
       bg: "#202023",
     },
@@ -30,7 +29,7 @@ const components = {
     },
   },
   Link: {
-    baseStyle: (props) => ({
+    baseStyle: () => ({
       color: accent,
       textUnderlineOffset: 3,
     }),
@@ -41,7 +40,7 @@ const components = {
     },
   },
   BreadcrumbLink: {
-    baseStyle: (props) => ({
+    baseStyle: () => ({
       color: accent,
       textUnderlineOffset: 3,
     }),
@@ -49,9 +48,8 @@ const components = {
 }
 
 const fonts = {
-  body:`"Public Sans", sans-serif`,
-  heading: `"Covered By Your Grace", "Public Sans"`,
-
+  body: `"Public Sans", sans-serif`,
+  heading: `"Public Sans", sans-serif`,
 }
 
 const colors = {

@@ -1,7 +1,6 @@
 import {
   CircularProgress,
   Progress,
-  Box,
   Stack,
   HStack,
 } from "@chakra-ui/react"
@@ -9,6 +8,7 @@ import { useEffect, useState } from "react"
 import getLeetStats from "../services/LeetStats.service"
 
 const LeetCard = () => {
+
   const [data, setData] = useState(null)
   useEffect(() => {
     getLeetStats().then((r) => {
