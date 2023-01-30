@@ -43,8 +43,8 @@ for repo in repos:
 
         repo["thumbnail"] = f"{dirpath}/{repo['name']}/thumbnail.jpg"
         image = Image.open(f"{dirpath}{repo['name']}/{imgs[0]['name']}").convert("RGB")
-        image.thumbnail((240, 240), Image.ANTIALIAS)
-        image.save(f"{dirpath}{repo['name']}/thumbnail.jpg", "JPEG")
+        image.thumbnail((480, 480), Image.ANTIALIAS)
+        image.save(f"{dirpath}{repo['name']}/thumbnail.jpg", "JPEG", quality=20)
 
 
 open("projects_json.txt", "w").write(json.dumps(repos))
