@@ -79,7 +79,7 @@ const Resume = () => {
         <Stack spacing="7">
           <Box bg="rgba(255,255,255,0.1)" borderRadius="md" p="2" align="left">
             <HStack spacing="7">
-              <Box>
+              <Box maxW="200px">
                 <Image
                   borderRadius="full"
                   src={data.portrait}
@@ -87,7 +87,7 @@ const Resume = () => {
                 />
               </Box>
               <Stack spacing="1">
-                <Heading>Jack Ragless</Heading>
+                <Heading size="lg">Jack Ragless</Heading>
                 <Text>{data.specialisation}</Text>
                 <Link href={`mailto:${data.email}`}>{data.email}</Link>
                 <Text>{data.location}</Text>
@@ -100,22 +100,22 @@ const Resume = () => {
             </HStack>
           </Box>
           <Stack>
-            <Heading size="lg">About</Heading>
+            <Heading size="md">About</Heading>
             <Text>{data.about}</Text>
           </Stack>
           <Stack>
-            <Heading size="lg">Skills</Heading>
+            <Heading size="md">Skills</Heading>
             <SkillTree />
           </Stack>
           <Stack>
-            <Heading size="lg">Education</Heading>
+            <Heading size="md">Education</Heading>
             <Divider></Divider>
             {data.education.map((eduItem, i) => {
               return <ResumeItem data={eduItem} key={`edu_${i}`} />
             })}
           </Stack>
           <Stack>
-            <Heading size="lg">Work Experience</Heading>
+            <Heading size="md">Work Experience</Heading>
             <Accordion allowMultiple justifyContent="left">
               {data.work_experience.map((workItem, i) => {
                 return <ResumeItem data={workItem} key={`wexp_${i}`} />
