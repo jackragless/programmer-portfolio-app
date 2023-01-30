@@ -45,9 +45,6 @@ const Navbar = () => {
       >
         <Show above="md">
           <HStack>
-            {/* <Heading mr="5" variant="nav-logo">
-              J.R.
-            </Heading> */}
             <JrIcon boxSize={12} mr="5" />
 
             <ButtonGroup gap="1" variant="ghost">
@@ -90,7 +87,6 @@ const Navbar = () => {
           </HStack>
         </Show>
         <Hide above="md">
-          {/* <Heading variant="nav-logo">J.R.</Heading> */}
           <JrIcon boxSize={12} />
           <Spacer />
           <Menu>

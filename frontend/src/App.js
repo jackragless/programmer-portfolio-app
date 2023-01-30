@@ -14,15 +14,13 @@ const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box
-        as={motion.div}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 0.5 }}
       >
         <Navbar />
-        {/* w={{ base: "95%", md: "60%", lg: "45%", xl: "30%" }} */}
         <Container w={{ lg: "95%" }} p={3}>
           <VStack my={3}>
             <Box h="300px">
@@ -40,7 +38,7 @@ const App = () => {
             </Routes>
           </VStack>
         </Container>
-      </Box>
+      </motion.div>
     </ChakraProvider>
   )
 }
