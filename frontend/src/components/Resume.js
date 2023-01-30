@@ -79,7 +79,7 @@ const Resume = () => {
         <Stack spacing="7">
           <Box bg="rgba(255,255,255,0.1)" borderRadius="md" p="2" align="left">
             <HStack spacing="7">
-              <Box boxSize="150px">
+              <Box>
                 <Image
                   borderRadius="full"
                   src={data.portrait}
