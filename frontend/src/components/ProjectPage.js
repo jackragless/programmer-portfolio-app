@@ -76,7 +76,7 @@ const ProjectPage = () => {
                 title={projectData.name}
                 width="100%"
                 height="250"
-                src="https://www.youtube.com/embed/Gze3XpnaWUA"
+                src={projectData.video}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

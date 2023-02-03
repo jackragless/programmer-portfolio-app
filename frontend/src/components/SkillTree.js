@@ -1,16 +1,12 @@
-import * as React from "react"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 const SVGComponent = (props) => (
   <TransformWrapper wheel={{ step: "0.05" }}>
     <TransformComponent>
       <svg
         viewBox="-250,-250,640,640"
-        width={1500}
-        height={300}
         style={{
           maxWidth: "100%",
-          height: "auto",
-          height: "intrinsic",
+          minHeight: "500",
         }}
         fontFamily="sans-serif"
         fontSize={10}
