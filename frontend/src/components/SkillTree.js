@@ -4,9 +4,13 @@ const SVGComponent = (props) => (
     <TransformComponent>
       <svg
         viewBox="-250,-250,640,640"
+        // width="1500"
+        height="400"
         style={{
-          maxWidth: "100%",
-          minHeight: "500",
+          width: "100%",
+          // height: "700",
+          height: "auto",
+          height: "intrinsic",
         }}
         fontFamily="sans-serif"
         fontSize={10}
