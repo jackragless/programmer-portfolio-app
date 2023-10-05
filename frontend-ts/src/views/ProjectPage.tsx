@@ -16,7 +16,7 @@ import {
   Spinner
 } from "@chakra-ui/react"
 import { ChevronRightIcon } from "@chakra-ui/icons"
-// import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
+import { BsGithub } from "react-icons/bs"
 import getProjects from "../services/Project.service"
 // import formatGithubText from "../utilities/formatGithubText"
 
@@ -29,7 +29,7 @@ export const ProjectPage = () => {
     getProjects(projectName ?? "").then((r) => {
       setProjectData(r[0])
     })
-  },[])
+  })
     return (
         projectData ? (
       <Container>
@@ -37,20 +37,22 @@ export const ProjectPage = () => {
           <VStack spacing="1" align="left">
             <HStack py="3">
               <Breadcrumb
-                spacing="8px"
+                spacing={2}
                 separator={<ChevronRightIcon color="gray.500" />}
               >
                 <BreadcrumbItem>
                   <Link href="#/projects">Projects</Link>
                 </BreadcrumbItem>
-                <BreadcrumbItem></BreadcrumbItem>
+                <BreadcrumbItem>
+                
+                </BreadcrumbItem>
               </Breadcrumb>
 
-              <LinkBox>
+              <LinkBox _hover={{color:"green.500"}}>
                 <LinkOverlay href={projectData.html_url} isExternal>
                   <HStack ml="-2">
                     <Text>{projectData.name}</Text>
-                    {/* <FaGithub /> */}
+                    <BsGithub />
                   </HStack>
                 </LinkOverlay>
               </LinkBox>
@@ -91,8 +93,8 @@ export const ProjectPage = () => {
             {projectData.imgs ? (
               projectData.imgs.map((img:any, i:any) => {
                 return (
-                  <Box key={`imgcontainer-${i}`}>
-                    <Image src={img} />
+                  <Box key={`imgcontainer-${i}`} >
+                    <Image src={img} borderRadius={2}/>
                   </Box>
                 )
               })

@@ -21,6 +21,7 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { BsFillMoonFill } from "react-icons/bs";
+import {FaSun} from "react-icons/fa"
 const JrIcon = createIcon({
   displayName: "Jr",
   viewBox: "0 0 385.254 200.977",
@@ -81,18 +82,9 @@ export const Navbar = () => {
                 Projects
               </Button>
             </Link>
+
             <Link
-              href={"#"}
-              isExternal
-              _hover={{
-                color: "green.300",
-                textDecoration: "none",
-              }}
-            >
-              <FaLinkedin size="1.2em" />
-            </Link>
-            <Link
-              href={"#"}
+              href={links?.github}
               isExternal
               _hover={{
                 color: "green.300",
@@ -102,14 +94,24 @@ export const Navbar = () => {
               <FaSquareGithub size="1.2em" />
             </Link>
             <Link
-              href={"#"}
+              href={links?.linkedin}
               isExternal
               _hover={{
-                color: "green.300",
+                color: "#0A63BC",
                 textDecoration: "none",
               }}
             >
-              <BsFillMoonFill size="1.2em" />
+              <FaLinkedin size="1.2em" />
+            </Link>
+            <Link
+              href={"#"}
+              isExternal
+              _hover={{
+                color: "yellow.300",
+                textDecoration: "none",
+              }}
+            >
+              <FaSun size="1.2em" />
             </Link>
           </HStack>
         </HStack>
@@ -131,10 +133,10 @@ export const Navbar = () => {
             <MenuItem as={Link} href={"#/projects"}>
               Projects
             </MenuItem>
-            <MenuItem as={Link} href={links?.Github}>
+            <MenuItem as={Link} href={links?.github}>
               Github
             </MenuItem>
-            <MenuItem as={Link} href={links?.LinkedIn}>
+            <MenuItem as={Link} href={links?.linkedin}>
               LinkedIn
             </MenuItem>
           </MenuList>

@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { Routes, Route } from "react-router-dom";
 import { customTheme } from "./themes/theme";
 function App() {
-  const [rotateRate, setRotateRate] = useState(0.002);
+  const [rotateRate, setRotateRate] = useState(1);
 
   return (
     <motion.div
@@ -27,7 +27,7 @@ function App() {
           <VStack my={3}>
             <Box
               onMouseDown={() => setRotateRate(0)}
-              onMouseUp={() => setRotateRate(0.002)}
+              onMouseUp={() => setRotateRate(1)}
             >
               <Voxel filePath={"myvoxel.gltf"} rotateRate={rotateRate} />
             </Box>

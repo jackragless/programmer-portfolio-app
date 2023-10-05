@@ -36,7 +36,18 @@ const components = {
     baseStyle: () => ({
       color: "#FFFFFF",
       textUnderlineOffset: 3,
+      _hover:{
+        textDecoration:"none",
+        color: "green.300"
+      }
     }),
+  },
+  LinkBox:{
+    projectName:() =>({
+      _hover:{
+        color: "green.300"
+      }
+    })
   },
   Button: {
     baseStyle: () => ({
