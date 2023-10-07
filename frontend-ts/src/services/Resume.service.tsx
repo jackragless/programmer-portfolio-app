@@ -1,7 +1,6 @@
 import axios from "axios"
-
-const getResume = async () => {
-  const res = await axios.get(`https://programmer-portfolio-app.vercel.app/api/resume`)
+axios.defaults.baseURL = process.env.REACT_APP_API_URI;
+export const getResume = async () => {
+  const res = await axios.get("/resume")
   return res.data[0]
 }
-export default getResume

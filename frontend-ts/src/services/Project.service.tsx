@@ -1,10 +1,6 @@
 import axios from "axios"
-
-// type Project = Record<string,any>
-
-const getProjects = async (query:string) => {
-  const res = await axios.get(`https://programmer-portfolio-app.vercel.app/api/projects/?title=${query}`)
+axios.defaults.baseURL = process.env.REACT_APP_API_URI;
+export const getProjects = async (query:string) => {
+  const res = await axios.get(`/projects/?title=${query}`)
   return res.data.projects
 }
-
-export default getProjects

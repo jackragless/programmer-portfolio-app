@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import {ProjectItem} from "../components"
 import { SimpleGrid, Spinner } from "@chakra-ui/react"
-import getProjects from "../services/Project.service"
+import {getProjects} from "../services/Project.service"
 
 export const ProjectGrid = () => {
   const [projects, setProjects] = useState(null)

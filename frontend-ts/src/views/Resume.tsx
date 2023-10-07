@@ -18,7 +18,7 @@ import {
   Spinner
 } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
-import getResume from "../services/Resume.service"
+import {getResume} from "../services/Resume.service"
 import { DownloadIcon } from "@chakra-ui/icons"
 // import { SkillTree } from "../components"
 
@@ -68,6 +68,8 @@ const ResumeItem = ({ data }:{data:any}) => {
 }
 
 export const Resume = () => {
+
+ 
   const [data, setData] = useState<any>(null)
   useEffect(() => {
     getResume().then((r) => {

@@ -1,9 +1,8 @@
 // import React from "react"
 import { HamburgerIcon } from "@chakra-ui/icons";
-import getResume from "../services/Resume.service";
+import {getResume} from "../services/Resume.service";
 import {
   Button,
-  ButtonGroup,
   Flex,
   HStack,
   Link,
@@ -16,7 +15,10 @@ import {
   Show,
   Spacer,
   createIcon,
+  useColorModeValue,
+  useColorMode
 } from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
@@ -36,10 +38,11 @@ export const Navbar = () => {
       setLinks(links);
     });
   });
+  const { toggleColorMode } = useColorMode()
 
   return (
     <Flex
-      w="100%"
+      // w="100%"
       className="navbarContainer"
       justifyContent="center"
       alignItems="center"
@@ -57,12 +60,13 @@ export const Navbar = () => {
                   location.pathname === "/resume" || location.pathname === "/"
                 }
                 size="md"
-                color="white"
+                color= "white"
+
+                transition= "background-position 275ms ease"
+                // transition= "background-position 1s ease"
                 _hover={{
-                  fontColor: "linear-gradient(to right, black 50%, white 50%)",
-                  fontColorSize: "200% 100%",
-                  fontColorPosition: "right bottom",
-                  transition: "all .5s ease-out"
+                  backgroundPosition: "0 100%",
+                  color:"green"
                 }}
               >
                 Resume
@@ -103,7 +107,7 @@ export const Navbar = () => {
             >
               <FaLinkedin size="1.2em" />
             </Link>
-            <Link
+            {/* <Link
               href={"#"}
               isExternal
               _hover={{
@@ -112,7 +116,14 @@ export const Navbar = () => {
               }}
             >
               <FaSun size="1.2em" />
-            </Link>
+            </Link> */}
+                    <IconButton
+                    size="1.5em"
+          aria-label="Toggle theme"
+          colorScheme={useColorModeValue('purple', 'orange')}
+          icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+          onClick={toggleColorMode}
+        ></IconButton>
           </HStack>
         </HStack>
       </Show>

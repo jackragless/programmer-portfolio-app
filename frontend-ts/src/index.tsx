@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <HashRouter>
-  {/* <ColorModeScript initialColorMode={customTheme.config.initialColorMode} /> */}
+  <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
     <App />
   </HashRouter>
 );

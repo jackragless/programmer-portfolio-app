@@ -27,4 +27,5 @@
 
 /frontend/src/config.json
 
-/backend/.env
+/backend-ts/.env
+/frontend-ts/.env
