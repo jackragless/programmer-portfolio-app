@@ -83,7 +83,7 @@ const fonts = {
 
 const config = {
   initialColorMode: "dark",
-  useSystemColorMode: true,
+  useSystemColorMode: false,
 }
 
 export const theme = extendTheme({ config, styles, components, fonts})
