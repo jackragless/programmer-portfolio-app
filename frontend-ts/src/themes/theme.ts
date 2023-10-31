@@ -1,69 +1,77 @@
 import { extendTheme } from "@chakra-ui/react"
+import { mode } from '@chakra-ui/theme-tools'
 import "@fontsource/public-sans"
-
-// const accent = "#95DFAE"
+import "@fontsource-variable/roboto-mono"
 
 const styles = {
-  global: () => ({
+  global: (props:any) => ({
     body: {
-      bg: "#202023",
-      color:"#FFFFFF",
-    },
+      color: mode('gray.800', 'gray.100')(props),
+      bg: mode('whiteAlpha.900', '#202023')(props),
+    }
   }),
-}
+};
 
 const components = {
+
   Text: {
     baseStyle: {
       fontFamily: "Public Sans",
-      color:"#FFFFFF",
-      fontSize:"0.8em"
+      fontSize:"0.8rem"
     },
   },
   Heading: {
     baseStyle: {
       fontFamily: "Public Sans",
       fontWeight: 900,
-      color:"#FFFFFF",
-    },
-    variants: {
-      "nav-logo": {
-        fontFamily: "Covered By Your Grace",
-      },
-    },
+    }
   },
+
   Link: {
     baseStyle: () => ({
-      color: "#FFFFFF",
-      textUnderlineOffset: 3,
+      fontSize:"0.8rem",
       _hover:{
         textDecoration:"none",
-        color: "green.300"
+        color: "green.300",
+        
       }
     }),
   },
   LinkBox:{
-    projectName:() =>({
+    baseStyle: {
       _hover:{
-        color: "green.300"
+        textDecoration:"none",
+        color: "green.300",
       }
-    })
+    }
   },
   Button: {
     baseStyle: () => ({
-      color: "#FFFFFF",
-      // textUnderlineOffset: 3,
+      _hover:{
+        color: "green.300",
+        textDecoration: "none",
+      }
     }),
   },
   Badge: {
     baseStyle: {
-      fontFamily: "courier",
+      fontWeight:500,
+      color:"green.300",
+      bg:"#34403A",
+      colorScheme:"green",
+      fontSize:"0.7rem",
+      letterSpacing:0.3,
+      display:"inline-flex",
+      justifyContent:"center"
     },
   },
   BreadcrumbLink: {
     baseStyle: () => ({
       color: "#FFFFFF",
-      textUnderlineOffset: 3,
+      _hover:{
+        textDecoration:"none",
+        color: "green.300"
+      }
     }),
   },
 }
@@ -73,13 +81,9 @@ const fonts = {
   heading: `"Public Sans", sans-serif`,
 }
 
-const colors = {
-  white:"#FFFFFF"
-}
-
 const config = {
   initialColorMode: "dark",
   useSystemColorMode: true,
 }
 
-export const customTheme = extendTheme({ config, styles, components, fonts, colors })
+export const theme = extendTheme({ config, styles, components, fonts})

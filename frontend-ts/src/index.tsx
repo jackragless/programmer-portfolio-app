@@ -1,17 +1,17 @@
 import ReactDOM from 'react-dom/client';
-// import './index.css';
+import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {  HashRouter } from 'react-router-dom';
 import { ColorModeScript } from '@chakra-ui/react';
-import { customTheme } from './themes/theme';
+import { theme } from './themes/theme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <HashRouter>
-  <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
+  <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </HashRouter>
 );

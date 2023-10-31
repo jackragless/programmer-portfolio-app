@@ -22,7 +22,7 @@ export const ProjectGrid = () => {
       </SimpleGrid>
       )
       :
-      (<Spinner color='red.500' />)
+      (<Spinner color='green.300' />)
     )
       }
 

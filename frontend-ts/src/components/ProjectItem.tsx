@@ -9,8 +9,7 @@ import {
   AspectRatio,
   Image
 } from "@chakra-ui/react"
-// import formatGithubText from "../utilities/formatGithubText"
-import ProgressiveImage from "react-progressive-graceful-image"
+
 
 export const ProjectItem = ({ projectData }:{projectData:any}) => {
   const short_desc = projectData.description.slice(
@@ -24,10 +23,12 @@ export const ProjectItem = ({ projectData }:{projectData:any}) => {
         <Card
         maxW="sm"
           h="100%"
-          boxShadow="md"
-          bg="transparent"
+          background="transparent"
+          _hover={{
+            bg:"#3A383A"
+          }}
+                    boxShadow="md"
           borderRadius={2}
-          _hover={{ bg: "#2c2c33" }}
         >
           <CardBody p={3}>
           <AspectRatio ratio={5/3}>
