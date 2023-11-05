@@ -11,7 +11,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { theme } from "./themes/theme";
 function App() {
-  const [rotateRate, setRotateRate] = useState(1);
+  const [rotateRate, setRotateRate] = useState(2);
 
   return (
     

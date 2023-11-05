@@ -116,6 +116,10 @@ export const Navbar = () => {
                 aria-label="compact-menu"
                 borderRadius={2}
                 icon={<FaLinkedin size="1.2em" />}
+                _hover={{
+                  color: "#0A66C2",
+                  bg:"#313134"
+                }}
               />
             </Link>
 
