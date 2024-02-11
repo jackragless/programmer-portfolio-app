@@ -1,6 +1,6 @@
 import "./App.css";
 import { Navbar, Voxel } from "./components";
-import { ProjectGrid, ProjectPage, Resume} from './views';
+import { ProjectGrid,  Resume} from './views';
 import {
   VStack,
   Box,
@@ -32,7 +32,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Resume />} />
               <Route path="/projects" element={<ProjectGrid />} />
-              <Route path="/projects/:title" element={<ProjectPage />} />
               <Route path="/resume" element={<Resume />} />
             </Routes>
           </VStack>

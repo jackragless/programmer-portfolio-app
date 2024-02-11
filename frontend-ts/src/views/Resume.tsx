@@ -32,11 +32,13 @@ const ResumeItem = ({ data }: { data: any }) => {
 
   return (
   
-  <AccordionItem py="2" pointerEvents={data.desc ? "auto" : "none"} 
+  <AccordionItem pointerEvents={data.desc ? "auto" : "none"}  _hover={{
+    bg:"rgba(0,0,0,0.02)"
+  }}
   onMouseOver={() =>{ setResumeItemActive(true)}} onMouseOut={() => setResumeItemActive(false)}
   >
     <AccordionButton px="0">
-      <Box  flex="1">
+      <Box  flex="1" my="2">
         <HStack>
           <Badge 
           w="7rem"  mr="0.8rem"
@@ -70,7 +72,7 @@ export const Resume = () => {
       <Stack spacing="7">
         <Box bg="rgba(255,255,255,0.1)" borderRadius={2} p="2">
           <HStack spacing="7">
-            <Box maxW="12rem" minW="6rem">
+            <Box>
               <Image
                 borderRadius={2}
                 src={data.portrait}
@@ -78,7 +80,7 @@ export const Resume = () => {
               />
             </Box>
             <Stack spacing="2">
-              <Heading size="lg">Jack Ragless</Heading>
+              <Heading fontSize="25px">Jack Ragless</Heading>
               <HStack><BiCodeCurly/><Text>{data.specialisation}</Text></HStack>
               <Tooltip label="Shoot me an email">
                 <LinkBox _hover={{ color: "green.300" }}><LinkOverlay href={`mailto:${data.email}`}><HStack><GrMail/><Text>{data.email}</Text></HStack></LinkOverlay></LinkBox>
@@ -100,6 +102,14 @@ export const Resume = () => {
         {/* <Stack>
           <Heading size="md">Skills.</Heading>
         </Stack> */}
+                <Stack>
+          <Heading size="md">Career So Far.</Heading>
+          <Accordion allowMultiple justifyContent="left">
+            {data.work_experience.map((workItem: any, i: any) => {
+              return <ResumeItem data={workItem} key={`wexp_${i}`} />;
+            })}
+          </Accordion>
+        </Stack>
         <Stack>
           <Heading size="md">Education.</Heading>
           <Accordion allowMultiple justifyContent="left">
@@ -108,14 +118,7 @@ export const Resume = () => {
           })}
           </Accordion>
         </Stack>
-        <Stack>
-          <Heading size="md">Career So Far.</Heading>
-          <Accordion allowMultiple justifyContent="left">
-            {data.work_experience.map((workItem: any, i: any) => {
-              return <ResumeItem data={workItem} key={`wexp_${i}`} />;
-            })}
-          </Accordion>
-        </Stack>
+
       </Stack>
     </Box>
   ) : (

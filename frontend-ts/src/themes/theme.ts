@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { background, extendTheme } from "@chakra-ui/react"
 import { mode } from '@chakra-ui/theme-tools'
 import "@fontsource/public-sans"
 import "@fontsource-variable/roboto-mono"
@@ -8,6 +8,7 @@ const styles = {
     body: {
       color: mode('gray.800', 'gray.100')(props),
       bg: mode('whiteAlpha.900', '#202023')(props),
+      fontFamily: "Source Sans Pro",
     }
   }),
 };
@@ -16,26 +17,26 @@ const components = {
 
   Text: {
     baseStyle: {
-      fontFamily: "Public Sans",
       fontSize:"0.8rem"
     },
   },
   Heading: {
     baseStyle: {
-      fontFamily: "Public Sans",
-      fontWeight: 900,
+      letterSpacing: "0.5px",
+      fontFamily: "Source Sans Pro",
+      fontSize:"25px",
+      textTransform: "uppercase",
     }
   },
-
   Link: {
-    baseStyle: () => ({
+    baseStyle: {
       fontSize:"0.8rem",
       _hover:{
         textDecoration:"none",
         color: "green.300",
         
       }
-    }),
+    },
   },
   LinkBox:{
     baseStyle: {
@@ -46,12 +47,14 @@ const components = {
     }
   },
   Button: {
-    baseStyle: () => ({
+    baseStyle:{
+      textTransform: "uppercase",
+      letterSpacing: "0.5px",
       _hover:{
         color: "green.300",
         textDecoration: "none",
       }
-    }),
+    },
   },
   Badge: {
     baseStyle: {

@@ -19,15 +19,15 @@ export const ProjectItem = ({ projectData }:{projectData:any}) => {
 
   return (
     <LinkBox>
-      <LinkOverlay href={`#projects/${projectData.name}`}>
+      <LinkOverlay href={projectData.html_url} target="_blank">
         <Card
         maxW="sm"
           h="100%"
           background="transparent"
           _hover={{
-            bg:"#3A383A"
+            bg:"rgba(0,0,0,0.2)"
           }}
-                    boxShadow="md"
+          boxShadow="md"
           borderRadius={2}
         >
           <CardBody p={3}>

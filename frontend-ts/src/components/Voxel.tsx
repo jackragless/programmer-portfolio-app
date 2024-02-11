@@ -2,12 +2,8 @@
 import { Canvas} from "@react-three/fiber";
 import { OrbitControls, Stage, Gltf } from "@react-three/drei";
 import { Box } from "@chakra-ui/react";
-import { Clock } from "three";
 
 export const Voxel = ({filePath,rotateRate}:{filePath:string,rotateRate:number}) => {
-  var clock = new Clock()
-  var temp = clock.getDelta();
-  console.log(temp)
   return (
     <Box h="250px" w="500px">
     <Canvas shadows gl={{ antialias: true }} dpr={[1, 1.5]} camera={{ position: [0, 6, 12], fov: 35 }}>
