@@ -32,7 +32,7 @@ export const Navbar = () => {
     getResume().then((links) => {
       setLinks(links);
     });
-  });
+  },[]);
   return (
     <Flex
       className="navbarContainer"
@@ -105,7 +105,7 @@ export const Navbar = () => {
         {/* {ThemeToggleButton(toggleColorMode, "1.5rem")} */}
         <Menu>
           <MenuButton
-            as={IconButton}
+            as={IconButton} 
             aria-label="Options"
             icon={<HamburgerIcon />}
             variant="outline"
@@ -113,16 +113,16 @@ export const Navbar = () => {
             ml={2}
           />
           <MenuList bg="#2C2A2C">
-            <MenuItem as={Link} href={"#/resume"}>
+            <MenuItem as={Link} href={"#/resume"} bg="#2C2A2C" _hover={{bg:"#313134"}}>
               Resume
             </MenuItem>
-            <MenuItem as={Link} href={"#/projects"}>
+            <MenuItem as={Link} href={"#/projects"} bg="#2C2A2C" _hover={{bg:"#313134"}}>
               Projects
             </MenuItem>
-            <MenuItem as={Link} href={links?.github}>
+            <MenuItem as={Link} href={links?.github} bg="#2C2A2C" _hover={{bg:"#313134"}}>
               Github
             </MenuItem>
-            <MenuItem as={Link} href={links?.linkedin}>
+            <MenuItem as={Link} href={links?.linkedin} bg="#2C2A2C" _hover={{bg:"#313134"}}>
               LinkedIn
             </MenuItem>
           </MenuList>

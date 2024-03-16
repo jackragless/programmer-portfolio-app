@@ -10,12 +10,11 @@ import {
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { theme } from "./themes/theme";
-import { Clock } from "three";
 
-const clock = new Clock();
+const baseRotateRate = 3;
 
 function App() {
-  const [rotateRate, setRotateRate] = useState(2);
+  const [rotateRate, setRotateRate] = useState(baseRotateRate);
 
   return (
     
@@ -29,7 +28,7 @@ function App() {
           <VStack my={3}>
             <Box
               onMouseDown={() => setRotateRate(0)}
-              onMouseUp={() => setRotateRate(1*clock.getDelta())}
+              onMouseUp={() => setRotateRate(baseRotateRate)}
             >
               <Voxel filePath={"myvoxel.gltf"} rotateRate={rotateRate} />
             </Box>

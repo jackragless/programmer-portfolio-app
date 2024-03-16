@@ -9,7 +9,7 @@ export const ProjectGrid = () => {
     getProjects("").then((r) => {
       setProjects(r)
     })
-  })
+  },[])
 
     return (
       projects ? (

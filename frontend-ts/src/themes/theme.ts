@@ -17,7 +17,7 @@ const components = {
 
   Text: {
     baseStyle: {
-      fontSize:"0.8rem"
+      fontSize:"14px"
     },
   },
   Heading: {
@@ -30,7 +30,7 @@ const components = {
   },
   Link: {
     baseStyle: {
-      fontSize:"0.8rem",
+      fontSize:"14px",
       _hover:{
         textDecoration:"none",
         color: "green.300",
