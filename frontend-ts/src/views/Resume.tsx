@@ -86,13 +86,13 @@ const ResumeItem = ({ data }: { data: WorkExperience }) => {
         <Box flex="1" my="2">
           <HStack>
             <Badge
-              w="7rem" mr="0.8rem"
+              w="110px" mr="15px"
             >
               {`${data.startDate ?? ""} - ${data.endDate ?? 'PRESENT'}`}
             </Badge>
             <Box>
-              <Text display="flex" justifyContent="left">{data.title}</Text>
-              <Text display="flex" justifyContent="left">{`${data.entity} - ${data.location}`}</Text>
+              <Text display="flex" align="left">{data.title}</Text>
+              <Text display="flex" align="left">{`${data.entity} - ${data.location}`}</Text>
             </Box>
           </HStack>
         </Box>
