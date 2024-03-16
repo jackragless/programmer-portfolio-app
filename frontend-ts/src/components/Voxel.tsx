@@ -9,7 +9,7 @@ import { Box } from "@chakra-ui/react";
 export const Voxel = ({filePath,rotateRate}:{filePath:string,rotateRate:number}) => {
 
   return (
-    <Box h="250px" w="500px">
+    <Box h="250px" w="100%">
     <Canvas shadows gl={{ antialias: true }} dpr={[1, 1.5]} camera={{ position: [0, 6, 12], fov: 35 }}>
     <Stage
       preset="soft"

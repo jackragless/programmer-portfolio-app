@@ -26,7 +26,7 @@ function App() {
         <Container w={{ lg: "95%" }} p={3}>
           
           <VStack my={3}>
-            <Box
+            <Box w="100%"
               onMouseDown={() => setRotateRate(0)}
               onMouseUp={() => setRotateRate(baseRotateRate)}
             >
