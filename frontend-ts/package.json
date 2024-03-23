@@ -23,6 +23,7 @@
     "axios": "^1.5.1",
     "circlepack-chart": "github:vasturiano/circlepack-chart",
     "d3": "^7.8.5",
+    "dotenv": "^16.4.4",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

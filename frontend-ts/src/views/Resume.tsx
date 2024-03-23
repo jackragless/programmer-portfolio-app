@@ -30,11 +30,6 @@ import { DownloadIcon } from "@chakra-ui/icons";
 import { IoLocationSharp } from "react-icons/io5";
 import { GrMail } from "react-icons/gr";
 import { BiCodeCurly } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { IoBarChartSharp } from "react-icons/io5";
-import { BsTerminalFill } from "react-icons/bs";
-// import { data } from "../components/data";
-// import { ResponsiveCirclePackingCanvas } from "@nivo/circle-packing";
 
 type WorkExperience = {
   title: string;
@@ -86,7 +81,7 @@ const ResumeItem = ({ data }: { data: WorkExperience }) => {
         <Box flex="1" my="2">
           <HStack>
             <Badge
-              w="110px" mr="15px"
+              maxWidth="110px" minWidth="110px" mr="15px"
             >
               {`${data.startDate ?? ""} - ${data.endDate ?? 'PRESENT'}`}
             </Badge>
@@ -96,7 +91,7 @@ const ResumeItem = ({ data }: { data: WorkExperience }) => {
             </Box>
           </HStack>
         </Box>
-        {data.desc && <AccordionIcon color={resumeItemActive ? "green.300" : "initial"} />}
+        {data.desc && <AccordionIcon color={resumeItemActive ? "green.300" : "white"} />}
       </AccordionButton>
       <AccordionPanel px={0} pb={4} >
         <Text>{data.desc ?? ""}</Text>
