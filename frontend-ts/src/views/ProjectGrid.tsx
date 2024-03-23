@@ -16,7 +16,7 @@ export const ProjectGrid = () => {
       <SimpleGrid columns={[1, 1, 2]} gap={3}>
         {
         // @ts-expect-error
-        projects.map((repo) => {
+        projects.sort(x=>x.index).map((repo) => {
           return <ProjectItem projectData={repo} key={repo.name} />
         })}
       </SimpleGrid>

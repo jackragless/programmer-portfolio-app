@@ -94,15 +94,12 @@ export const Navbar = () => {
                 }}
               />
             </Link>
-
-            {/* {ThemeToggleButton(toggleColorMode, "1.2em")} */}
           </HStack>
         </HStack>
       </Show>
       <Hide above="md">
         <JrIcon boxSize={"2.5rem"} />
         <Spacer />
-        {/* {ThemeToggleButton(toggleColorMode, "1.5rem")} */}
         <Menu>
           <MenuButton
             as={IconButton} 
